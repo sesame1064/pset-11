@@ -24,6 +24,25 @@ public class Exercises {
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
+    if(list.isEmpty()){
+      return -1;
+    }
+    int start = 0;
+    int end = list.size() - 1;
+    int middle = 0;
+    while(list.get(middle) != target){
+      middle = (start + end) /2;
+
+      if(middle == 0 || middle == list.size()){
+        return -1;
+      }else if(list.get(middle) < target){
+        start = middle + 1;
+      }else if(list.get(middle) > target){
+        end = middle - 1;
+      }else{
+        return middle;
+      }
+    }
     return -1;
   }
 
