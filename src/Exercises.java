@@ -54,9 +54,9 @@ public class Exercises {
     while(start <= end){
       middle = (start + end) / 2;
 
-      if(list[middle] < target){
+      if(list[middle].compareTo(target) < 0){
         start = middle + 1;
-      }else if(list[middle] > target){
+      }else if(list[middle].compareTo(target) > 0){
         end = middle - 1;
       }
     }    
