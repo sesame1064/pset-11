@@ -30,12 +30,9 @@ public class Exercises {
     int start = 0;
     int end = list.size() - 1;
     int middle = 0;
-    while(list.get(middle) != target){
-      middle = (start + end) /2;
-
-      if(middle == 0 || middle == list.size()){
-        return -1;
-      }else if(list.get(middle) < target){
+    while(start <= end){
+      middle = (start + end) / 2;
+      if(list.get(middle) < target){
         start = middle + 1;
       }else if(list.get(middle) > target){
         end = middle - 1;
@@ -47,7 +44,24 @@ public class Exercises {
   }
 
   public int findMeFaster(String[] list, String target) {
+    if(list.length == 0){
+      return -1;
+    }
+    int start = 0; 
+    int end = list.length - 1;
+    int middle = 0;
+
+    while(start <= end){
+      middle = (start + end) / 2;
+
+      if(list[middle] < target){
+        start = middle + 1;
+      }else if(list[middle] > target){
+        end = middle - 1;
+      }
+    }    
     return -1;
+
   }
 
   public int[] bubble(int[] list, boolean ascending) {
