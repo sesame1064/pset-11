@@ -259,7 +259,7 @@ public class Exercises {
 
 		return list;
   }
-
+//12
   public String[] merge(String[] list, boolean ascending) {
     if (list == null || list.length == 0) {
 			return null;
