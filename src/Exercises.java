@@ -130,6 +130,12 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
+    for(int i = 1; i < list.length; i++) {
+      int j = i; 
+      if(ascending == true){
+        while
+      }
+    }
     return null;
   }
 
