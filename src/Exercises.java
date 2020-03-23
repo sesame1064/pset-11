@@ -147,11 +147,36 @@ public class Exercises {
         }
       }
     }
-    return null;
+    return list;
   }
 
   public int[] selection(int[] list, boolean ascending) {
-    return null;
+    if(ascending == true) {
+      for (int i = 0; i < list.length - 1; i++){
+        int j = i;
+        for(int x = i + 1; x < list.length; x++){
+          if(list[x] < list[j]){
+            j = x;
+          }
+        }
+        int smolNum = list[j];
+        list[j] = list[i]; 
+        list[i] = smolNum;
+      }
+    }else if (ascending == false){
+      for (int i = 0; i < list.length - 1; i++){
+        int j = i;
+        for(int x = i + 1; x < list.length; x++){
+          if(list[x] > list[j]){
+            j = x;
+          }
+        }
+        int smolNum = list[j];
+        list[j] = list[i]; 
+        list[i] = smolNum;
+      }
+    }
+    return list;
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
