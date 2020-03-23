@@ -180,7 +180,24 @@ public class Exercises {
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-    return null;
+    for(int i = 0; i < list.size() - 1; i++){
+      int outInd = i; 
+      for(int j = i + 1; j < list.size(); j++){
+        if(ascending == true){
+          if(list.get(j).compareTo(list.get(outInd)) < 0) {
+            outInd = j;
+          }
+        }else{
+          if(list.get(j).compareTo(list.get(outInd)) > 0) {
+            outInd = j;
+          }
+        }
+      }
+      String temp =list.get(i); 
+      list.set(i, list.get(outInd));
+      list.set(outInd, temp);
+    }
+    return list;
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
