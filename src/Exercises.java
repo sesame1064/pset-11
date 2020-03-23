@@ -106,6 +106,7 @@ public class Exercises {
     }
     return list;
   }
+//7
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
     for(int i = 1; i < list.size(); i++){
@@ -128,7 +129,7 @@ public class Exercises {
     }
     return list;
   }
-
+//8
   public String[] insertion(String[] list, boolean ascending) {
     for(int i = 1; i < list.length; i++) {
       int j = i; 
