@@ -133,7 +133,18 @@ public class Exercises {
     for(int i = 1; i < list.length; i++) {
       int j = i; 
       if(ascending == true){
-        while
+        while(j > 0 && list[j - 1].compareTo(list[j]) > 0) {
+          String temp = list[j];
+          list[j] = list[j - 1];
+          list[j - 1]  = temp;
+          j--;
+        }
+      }else {
+        while (j > 0 && list[j - 1].compareTo(list[j]) < 0) {
+          String temp = list[j];
+          list[j] = list[j - 1];
+          list[j - 1] = temp;
+        }
       }
     }
     return null;
