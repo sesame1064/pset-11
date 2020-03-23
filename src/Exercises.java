@@ -201,22 +201,62 @@ public class Exercises {
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-    if(list == null || list.size() == 0){
-      return null;
-    }
-    int mid = list.size() / 2;
-    ArrayList<Integer>  one = new ArrayList<Integer>();
-    for(int i = 0; i < mid; i++){
-      one.set(i, list.get(i));
-    }
-    ArrayList<Integer> two = new ArrayList<Integer>();
-    for(int i = mid; i < mid; i++){
-      two.set(i - mid, list.get(i));
-    }
-    merge(one, ascending);
-    merge(two, ascending);
+    if (list == null || list.size() == 0) {
+			return null;
+		}
 
-    return null;
+		ArrayList<Integer> left = new ArrayList<Integer>();
+		ArrayList<Integer> right = new ArrayList<Integer>();
+		int mid;
+
+		if (list.size() == 1) {
+			return list;
+		} else {
+			mid = list.size() / 2;
+			for (int i = 0; i < mid; i++) {
+				left.add(list.get(i));
+			}
+
+			for (int i = mid; i < list.size(); i++) {
+				right.add(list.get(i));
+			}
+
+			left = merge(left, true);
+			right = merge(right, true);
+			int leftIndex = 0;
+			int rightIndex = 0;
+			int completeArrayIndex = 0;
+			
+			while (leftIndex < left.size() && rightIndex < right.size()) {
+				
+				if ((left.get(leftIndex).compareTo(right.get(rightIndex))) < 0) {
+					list.set(completeArrayIndex, left.get(leftIndex));
+					leftIndex++;
+				} else {
+					list.set(completeArrayIndex, right.get(rightIndex));
+					rightIndex++;
+				}
+				completeArrayIndex++;
+			}
+			
+			ArrayList<Integer> other;
+			int otherIndex;
+			
+			if (leftIndex >= left.size()) {
+				other = right;
+				otherIndex = rightIndex;
+			} else {
+				other = left;
+				otherIndex = leftIndex;
+			}
+
+			for (int i = otherIndex; i < other.size(); i++) {
+				list.set(completeArrayIndex, other.get(i));
+				completeArrayIndex++;
+			}
+		}
+
+		return list;
   }
 
   public String[] merge(String[] list, boolean ascending) {
