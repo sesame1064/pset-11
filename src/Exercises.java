@@ -150,7 +150,7 @@ public class Exercises {
     }
     return list;
   }
-
+//9
   public int[] selection(int[] list, boolean ascending) {
     if(ascending == true) {
       for (int i = 0; i < list.length - 1; i++){
