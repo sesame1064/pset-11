@@ -22,7 +22,7 @@ public class Exercises {
     }
     return -1;
   }
-
+//3
   public int findMeFaster(ArrayList<Integer> list, int target) {
     if(list.isEmpty()){
       return -1;
@@ -42,7 +42,7 @@ public class Exercises {
     }
     return -1;
   }
-
+//4
   public int findMeFaster(String[] list, String target) {
     if(list.length == 0){
       return -1;
