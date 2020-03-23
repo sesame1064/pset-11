@@ -108,7 +108,25 @@ public class Exercises {
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-    return null;
+    for(int i = 1; i < list.size(); i++){
+      int j = i;
+      if(ascending){
+        while (j > 0 && list.get(j -1) > list.get(j)) {
+          int temp = list.get(j);
+          list.set(j, list.get(j - 1));
+          list.set(j - 1, temp);
+          j--;
+        }
+      }else{
+        while(j > 0 && list.get(j -1) < list.get(j)) {
+          int temp = list.get(j);
+          list.set(j, list.get(j - 1));
+          list.set(j - 1, temp);
+          j--;
+        }
+      }
+    }
+    return list;
   }
 
   public String[] insertion(String[] list, boolean ascending) {
