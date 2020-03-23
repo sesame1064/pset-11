@@ -201,6 +201,21 @@ public class Exercises {
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
+    if(list == null || list.size() == 0){
+      return null;
+    }
+    int mid = list.size() / 2;
+    ArrayList<Integer>  one = new ArrayList<Integer>();
+    for(int i = 0; i < mid; i++){
+      one.set(i, list.get(i));
+    }
+    ArrayList<Integer> two = new ArrayList<Integer>();
+    for(int i = mid; i < mid; i++){
+      two.set(i - mid, list.get(i));
+    }
+    merge(one, ascending);
+    merge(two, ascending);
+
     return null;
   }
 
