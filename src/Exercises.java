@@ -70,13 +70,20 @@ public class Exercises {
       for(int j = 0; j < list.length - 1; j++){
         if(ascending == true){
           if(list[j] > list[j + 1]) {
-            int temp
+            int temp = list[j];
+            list[j] = list[j + 1];
+            list[j + 1] = temp;
+          }
+        }else{
+          if(list[j] < list[j + 1]){
+            int temp = list[j];
+            list[j] = list[j + 1];
+            list[j + 1] = temp;
           }
         }
       }
     }
-    
-    return null;
+    return list;
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
