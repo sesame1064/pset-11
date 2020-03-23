@@ -63,7 +63,7 @@ public class Exercises {
     return -1;
 
   }
-
+//5
   public int[] bubble(int[] list, boolean ascending) {
 
     for(int i = 0; i < list.length - 1; i++){
@@ -85,7 +85,7 @@ public class Exercises {
     }
     return list;
   }
-
+//6
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
     for(int i = 0; i < list.size() - 1; i++) {
       for(int j = 0; j < list.size() -1; j++){
