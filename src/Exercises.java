@@ -179,7 +179,7 @@ public class Exercises {
     }
     return list;
   }
-
+//10
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
     for(int i = 0; i < list.size() - 1; i++){
       int outInd = i; 
